@@ -1,5 +1,5 @@
 <template>
-	<header class="h home-header"  data-image-src="../static/assets/images/cover.jpg"  data-parallax="scroll">
+	<header class="h single-header">
 		<div class="cover"></div>
 		<div class="container">
 			<div class="logo">
@@ -8,18 +8,24 @@
 					<h1 class="logo-text">Weather App</h1>
 				</a>	
 			</div>
-			<section class="content">
+			<div class="nav-controll"><i class="fa fa-ellipsis-h"></i></div>
+			<div class="clear"></div>
+			<section class="single-contnet">
 				<div class="row">
-					<div class="col-lg-11 col-md-12 col-sm-12 center">
-						<h2>Make your daily commute safe and easy</h2>
-						<p>The No.1 Weather update platform</p>
+					<div class="col-lg-7 col-md-7">
+						<ul class="path-guide">
+							<li><a href="#">Home</a></li>
+							<li>Search</li>
+						</ul>
+					</div>
+					<div class="col-lg-5 col-md-5">
 						<div class="input">
-							<input type="text" name="term" placeholder="Weather in which city? eg london, Istanbul, Berlin etc">
+							<input type="" name="" placeholder="Enter term for search">
 							<button></button>
 						</div>
 					</div>
-					<div class="clear"></div>
 				</div>
+				<div class="clear"></div>
 			</section>
 		</div>
 	</header>
@@ -28,13 +34,10 @@
 <!--=================================================================================-->
 <script>
 	export default {
-		name: 'HomeHeaderComponent'
+		name: 'SubHeaderComponent'
 	}
 </script>
 
 <!--=================================================================================-->
 <style scoped>
-	header{
-		margin-bottom: 130px;
-	}
 </style>
