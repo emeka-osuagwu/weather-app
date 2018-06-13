@@ -1191,3 +1191,23 @@ iframe {
 	/*margin: 40px 0!important;*/
 	display: block;
 }
+
+
+ul.weather-item, .weather-info {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    display: inline;
+}
+
+li.weather-item-list {
+    display: inline-block;
+}
+
+li.weather-item-list {
+    padding: 3px;
+}
+
+ul.weather-item {
+    padding: 0px;
+}

@@ -1,7 +1,6 @@
 <template>
 	<div class="hello">
-		<HomeHeaderComponent></HomeHeaderComponent>
-		<weather :weathers="weathers" componentTitle="Top Locations"></weather>
+	
 	</div>
 </template>
 
@@ -13,7 +12,7 @@
 
 	export default {
 		
-		name: 'HomeComponent',
+		name: 'ViewWeatherComponent',
 
 		components: {
 			weather: WeatherComponent,
