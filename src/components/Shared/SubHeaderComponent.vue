@@ -15,7 +15,7 @@
 					<div class="col-lg-7 col-md-7">
 						<ul class="path-guide">
 							<li><router-link :to="{ name: 'home_page'}">Home</router-link></li>
-							<li>Search</li>
+							<li>{{componentTitle}}</li>
 						</ul>
 					</div>
 					<div class="col-lg-5 col-md-5">
@@ -34,7 +34,9 @@
 <!--=================================================================================-->
 <script>
 	export default {
-		name: 'SubHeaderComponent'
+		name: 'SubHeaderComponent',
+
+		props: ['componentTitle']
 	}
 </script>
 

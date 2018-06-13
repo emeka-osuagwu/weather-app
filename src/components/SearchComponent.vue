@@ -1,6 +1,6 @@
 <template>
 	<div class="hello">
-		<SubHeaderComponent></SubHeaderComponent>
+		<SubHeaderComponent componentTitle="Search"></SubHeaderComponent>
 		<section class="container-p">
 			<div class="container">	
 				<div class="row">

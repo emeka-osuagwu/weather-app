@@ -1,6 +1,6 @@
 <template>
 	<div class="hello">
-		<SubHeaderComponent></SubHeaderComponent>
+		<SubHeaderComponent componentTitle="skjfkdj"></SubHeaderComponent>
 
 		<section class="container-p">
 			<div class="container">	
