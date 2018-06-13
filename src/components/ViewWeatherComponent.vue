@@ -6,7 +6,7 @@
 			<div class="container">	
 				<div class="row">
 					
-					<div class="col-lg-9 col-md-9 center">
+					<div v-if="no_result" class="col-lg-9 col-md-9 center">
 						<div class="descriptions-container">
 							<div class="alert-container alert-blue">
 								No results were found. Try changing the keyword!
@@ -49,6 +49,7 @@
 		
 		data () {
 			return {
+				no_result: false,
 				weathers: [
 					{name: 'London'},
 					{name: 'Uk'}

@@ -3,10 +3,10 @@
 		<div class="cover"></div>
 		<div class="container">
 			<div class="logo">
-				<a href="#">
+				<router-link :to="{ name: 'home_page'}">
 					<img src="../../../static/assets/images/logo.png" alt="CleanDoc">
 					<h1 class="logo-text">Weather App</h1>
-				</a>	
+				</router-link>	
 			</div>
 			<section class="content">
 				<div class="row">

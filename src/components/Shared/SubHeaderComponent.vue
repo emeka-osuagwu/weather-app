@@ -3,10 +3,10 @@
 		<div class="cover"></div>
 		<div class="container">
 			<div class="logo">
-				<a href="#">
+				<router-link :to="{ name: 'home_page'}">
 					<img src="../../../static/assets/images/logo.png" alt="CleanDoc">
 					<h1 class="logo-text">Weather App</h1>
-				</a>	
+				</router-link>
 			</div>
 			<div class="nav-controll"><i class="fa fa-ellipsis-h"></i></div>
 			<div class="clear"></div>
@@ -14,13 +14,13 @@
 				<div class="row">
 					<div class="col-lg-7 col-md-7">
 						<ul class="path-guide">
-							<li><a href="#">Home</a></li>
+							<li><router-link :to="{ name: 'home_page'}">Home</router-link></li>
 							<li>Search</li>
 						</ul>
 					</div>
 					<div class="col-lg-5 col-md-5">
 						<div class="input">
-							<input type="" name="" placeholder="Enter term for search">
+							<input type="" name="" placeholder="Weather in which city? eg london, Istanbul, Berlin etc">
 							<button></button>
 						</div>
 					</div>
