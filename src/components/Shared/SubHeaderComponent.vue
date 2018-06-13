@@ -20,8 +20,8 @@
 					</div>
 					<div class="col-lg-5 col-md-5">
 						<div class="input">
-							<input type="" name="" placeholder="Weather in which city? eg london, Istanbul, Berlin etc">
-							<button></button>
+							<input type="text" @keydown.enter="searchLocation" v-model="search_keyword" placeholder="Weather in which city? eg london, Istanbul, Berlin etc">
+							<button @click="searchLocation"></button>
 						</div>
 					</div>
 				</div>
@@ -33,10 +33,35 @@
 
 <!--=================================================================================-->
 <script>
-	export default {
-		name: 'SubHeaderComponent',
 
-		props: ['componentTitle']
+	import axios from "axios";
+
+	export default {
+
+		name: 'SubHeaderComponent',
+		
+		props: ['componentTitle'],
+
+		data() {
+			return {
+				search_keyword: ''
+			}
+		},
+
+		methods: {
+			searchLocation() {
+				
+				if (this.search_keyword == '' || this.search_keyword == null) 
+				{
+					alert('Please enter a location')
+				}
+				else
+				{
+					this.$router.push('/search/' + this.search_keyword)
+				}
+			}
+		}
+
 	}
 </script>
 

@@ -5,7 +5,13 @@
 			<div class="container">	
 				<div class="row">
 					<div class="col-lg-9 col-md-9 center">
-						<weather :weathers="weathers" componentTitle="Search Results"></weather>
+						<div v-if="isLoading">
+							<Spinner></Spinner>
+							<center>
+								<p>Loading data....</p>
+							</center>
+						</div>
+						<weather v-if="!isLoading" :weathers="weathers" componentTitle="Search Results"></weather>
 					</div>
 				</div>
 				<div class="clear"></div>
@@ -17,6 +23,8 @@
 <!--=================================================================================-->
 <script>
 
+	import axios from "axios";
+	import Spinner from 'vue-simple-spinner';
 	import WeatherComponent from './Shared/WeatherComponent.vue';
 	import SubHeaderComponent from './Shared/SubHeaderComponent.vue';
 
@@ -25,18 +33,32 @@
 		name: 'SearchComponent',
 
 		components: {
+			Spinner,
+			SubHeaderComponent,
 			weather: WeatherComponent,
-			SubHeaderComponent: SubHeaderComponent
 		},
 		
 		data () {
 			return {
-				no_result: false,
-				weathers: [
-					{name: 'London'},
-					{name: 'Uk'}
-				]
+				weathers: [],
+				isLoading: false,
+				no_result: false
 			}
+		},
+
+		methods: {
+			getLocation(){
+				this.isLoading = true
+				axios.get(`http://localhost:1234?command=search&keyword=` + this.$route.params.location)
+				.then(response => {
+					this.isLoading = false
+					this.weathers.push(response.data)
+				})
+			}
+		},
+
+		created() {
+			this.getLocation()
 		}
 	}
 </script>

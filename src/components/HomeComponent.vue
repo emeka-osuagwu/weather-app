@@ -1,8 +1,8 @@
 <template>
 	<div class="hello">
 		<HomeHeaderComponent></HomeHeaderComponent>
-		<div>
-			<Spinner v-if="isLoading"></Spinner>
+		<div v-if="isLoading">
+			<Spinner></Spinner>
 			<center>
 				<p>Loading data....</p>
 			</center>

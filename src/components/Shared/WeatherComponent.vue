@@ -4,7 +4,7 @@
 			<h2 class="small-heading">{{componentTitle}}</h2>
 			<div class="row">
 				<div v-for="weather in weathers" class="col-lg-3 col-md-3 col-sm-6">
-					<router-link :to="{ name: 'view_weather', params: { woeid: weather.woeid }}" class="selective-box-lg js-tilt">
+					<router-link :to="{ name: 'view_weather', params: { woeid: weather[0].woeid }}" class="selective-box-lg js-tilt">
 						<div class="content">
 							<i class="helpper-icons-magic-hat"></i>
 							<h4>{{weather[0].title}}</h4>

@@ -1,11 +1,18 @@
 <template>
 	<div class="hello">
-		<SubHeaderComponent componentTitle="skjfkdj"></SubHeaderComponent>
+		<SubHeaderComponent componentTitle="Location"></SubHeaderComponent>
 
 		<section class="container-p">
 			<div class="container">	
 				<div class="row">
 					
+					<div v-if="isLoading">
+						<Spinner></Spinner>
+						<center>
+							<p>Loading data....</p>
+						</center>
+					</div>
+
 					<div v-if="no_result" class="col-lg-9 col-md-9 center">
 						<div class="descriptions-container">
 							<div class="alert-container alert-blue">
@@ -14,9 +21,9 @@
 						</div>
 					</div>
 
-					<div class="col-lg-9 col-md-9 center">
+					<div v-if="!isLoading" class="col-lg-9 col-md-9 center">
 						<div class="descriptions-container">
-							<h1>How to setup payment gateways</h1>
+							<h1>{{weather.title}}</h1>
 							<div class="single-detail">
 								<span>Posted On: Sep 09,2018</span>
 								<span>Updated On: Jan 21,2018</span>
@@ -35,6 +42,8 @@
 <!--=================================================================================-->
 <script>
 
+	import axios from "axios";
+	import Spinner from 'vue-simple-spinner';
 	import WeatherComponent from './Shared/WeatherComponent.vue';
 	import SubHeaderComponent from './Shared/SubHeaderComponent.vue';
 
@@ -43,18 +52,32 @@
 		name: 'ViewWeatherComponent',
 
 		components: {
-			weather: WeatherComponent,
-			SubHeaderComponent: SubHeaderComponent
+			Spinner,
+			SubHeaderComponent
 		},
 		
 		data () {
 			return {
 				no_result: false,
-				weathers: [
-					{name: 'London'},
-					{name: 'Uk'}
-				]
+				componentTitle: this.$route.params.woeid,
+				weather: {}
 			}
+		},
+
+		methods: {
+			getLocation(){
+				this.isLoading = true
+				axios.get(`http://localhost:1234?command=location&keyword=` + this.$route.params.woeid)
+				.then(response => {
+					console.log(response)
+					this.isLoading = false
+					this.weather = response.data
+				})
+			}
+		},
+
+		created() {
+			this.getLocation()
 		}
 	}
 </script>

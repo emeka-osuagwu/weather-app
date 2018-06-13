@@ -14,8 +14,8 @@
 						<h2>Make your daily commute safe and easy</h2>
 						<p>The No.1 Weather update platform</p>
 						<div class="input">
-							<input type="text" name="term" placeholder="Weather in which city? eg london, Istanbul, Berlin etc">
-							<button></button>
+							<input @keydown.enter="searchLocation" type="text" v-model="search_keyword" name="term" placeholder="Weather in which city? eg london, Istanbul, Berlin etc">
+							<button @click="searchLocation"></button>
 						</div>
 					</div>
 					<div class="clear"></div>
@@ -27,8 +27,33 @@
 
 <!--=================================================================================-->
 <script>
+
+	import axios from "axios";
+
 	export default {
-		name: 'HomeHeaderComponent'
+
+		name: 'HomeHeaderComponent',
+
+		data() {
+			return {
+				search_keyword: ''
+			}
+		},
+
+		methods: {
+			searchLocation() {
+				
+				if (this.search_keyword == '' || this.search_keyword == null) 
+				{
+					alert('Please enter a location')
+				}
+				else
+				{
+					this.$router.push('/search/' + this.search_keyword)
+				}
+			}
+		}
+
 	}
 </script>
 
