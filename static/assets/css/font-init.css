@@ -1,0 +1,67 @@
+/*
+	Font initializer
+
+	Theme name: Helpper
+	Author: Quadangles
+	Version: 1.0
+
+	Copyright 2018 - All right reserved.
+
+*/
+/*========================================================
+/* Roboto 
+/*========================================================*/
+@font-face {
+  font-family: 'roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: url(../fonts/roboto-light.ttf);
+}
+@font-face {
+  font-family: 'roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/roboto-regular.ttf);
+}
+@font-face {
+  font-family: 'roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url(../fonts/roboto-medium.ttf);
+}
+@font-face {
+  font-family: 'roboto';
+  font-style: normal;
+  font-weight: 600;
+  src: url(../fonts/roboto-bold.ttf);
+}
+/*========================================================
+/* nunito 
+/*========================================================*/
+@font-face {
+  font-family: 'nunito';
+  font-style: normal;
+  font-weight: 400;
+  src:url(../fonts/nunito-regular.ttf);
+}
+@font-face {
+  font-family: 'nunito';
+  font-style: normal;
+  font-weight: 500;
+  src:url(../fonts/nunito-semiBold.ttf);
+}
+@font-face {
+  font-family: 'nunito';
+  font-style: normal;
+  font-weight: 600;
+  src:url(../fonts/nunito-bold.ttf);
+}
+/*========================================================
+/* open sans
+/*========================================================*/
+@font-face {
+  font-family: 'opensans';
+  font-style: normal;
+  font-weight: 400;
+  src:url(../fonts/opensans-regular.ttf);
+}

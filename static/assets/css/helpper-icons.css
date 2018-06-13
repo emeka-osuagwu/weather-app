@@ -1,0 +1,127 @@
+
+@font-face {
+  font-family: "helpper-icons";
+  src: url("../fonts/helpper-icon.html");
+  src: url("../fonts/helpper-icond41d.html?#iefix") format("embedded-opentype"),
+       url("../fonts/helpper-icons.woff") format("woff"),
+       url("../fonts/helpper-icons.ttf") format("truetype"),
+       url("../fonts/helpper-icons.svg#helpper-icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "helpper-icons";
+    src: url("../helpper-icons.html#helpper-icons") format("svg");
+  }
+}
+
+[class^="helpper-icons-"]:before, [class*=" helpper-icons-"]:before,
+[class^="helpper-icons-"]:after, [class*=" helpper-icons-"]:after {   
+  font-family: "helpper-icons";
+ 
+font-style: normal;
+
+}
+
+.helpper-icons-calendar:before { content: "\f100"; }
+.helpper-icons-deadline:before { content: "\f101"; }
+.helpper-icons-portfolio:before { content: "\f102"; }
+.helpper-icons-tools:before { content: "\f103"; }
+.helpper-icons-suitcase:before { content: "\f104"; }
+.helpper-icons-businessman:before { content: "\f105"; }
+.helpper-icons-businesswoman-1:before { content: "\f106"; }
+.helpper-icons-businesswoman:before { content: "\f107"; }
+.helpper-icons-business-man:before { content: "\f108"; }
+.helpper-icons-management:before { content: "\f109"; }
+.helpper-icons-artificial-intelligence:before { content: "\f10a"; }
+.helpper-icons-user-2:before { content: "\f10b"; }
+.helpper-icons-medal:before { content: "\f10c"; }
+.helpper-icons-building:before { content: "\f10d"; }
+.helpper-icons-presentation-1:before { content: "\f10e"; }
+.helpper-icons-briefcase:before { content: "\f10f"; }
+.helpper-icons-desk-chair:before { content: "\f110"; }
+.helpper-icons-mortarboard:before { content: "\f111"; }
+.helpper-icons-telescope:before { content: "\f112"; }
+.helpper-icons-house:before { content: "\f113"; }
+.helpper-icons-hosting-6:before { content: "\f114"; }
+.helpper-icons-hosting-5:before { content: "\f115"; }
+.helpper-icons-rocket:before { content: "\f116"; }
+.helpper-icons-folder-1:before { content: "\f117"; }
+.helpper-icons-hosting-4:before { content: "\f118"; }
+.helpper-icons-hosting-3:before { content: "\f119"; }
+.helpper-icons-cloud-4:before { content: "\f11a"; }
+.helpper-icons-hosting-2:before { content: "\f11b"; }
+.helpper-icons-website:before { content: "\f11c"; }
+.helpper-icons-hosting-1:before { content: "\f11d"; }
+.helpper-icons-cloud-3:before { content: "\f11e"; }
+.helpper-icons-growth-1:before { content: "\f11f"; }
+.helpper-icons-buy:before { content: "\f120"; }
+.helpper-icons-hosting:before { content: "\f121"; }
+.helpper-icons-global:before { content: "\f122"; }
+.helpper-icons-folder:before { content: "\f123"; }
+.helpper-icons-growth:before { content: "\f124"; }
+.helpper-icons-file:before { content: "\f125"; }
+.helpper-icons-support:before { content: "\f126"; }
+.helpper-icons-cloud-2:before { content: "\f127"; }
+.helpper-icons-server:before { content: "\f128"; }
+.helpper-icons-backup-3:before { content: "\f129"; }
+.helpper-icons-backup-2:before { content: "\f12a"; }
+.helpper-icons-backup-1:before { content: "\f12b"; }
+.helpper-icons-backup:before { content: "\f12c"; }
+.helpper-icons-cloud-1:before { content: "\f12d"; }
+.helpper-icons-rotate:before { content: "\f12e"; }
+.helpper-icons-schedule:before { content: "\f12f"; }
+.helpper-icons-trolley:before { content: "\f130"; }
+.helpper-icons-loading:before { content: "\f131"; }
+.helpper-icons-chat:before { content: "\f132"; }
+.helpper-icons-industry:before { content: "\f133"; }
+.helpper-icons-oil-platform-1:before { content: "\f134"; }
+.helpper-icons-oil-platform:before { content: "\f135"; }
+.helpper-icons-award:before { content: "\f136"; }
+.helpper-icons-tabs:before { content: "\f137"; }
+.helpper-icons-windows-1:before { content: "\f138"; }
+.helpper-icons-windows:before { content: "\f139"; }
+.helpper-icons-cloud-computing-2:before { content: "\f13a"; }
+.helpper-icons-computer-graphic:before { content: "\f13b"; }
+.helpper-icons-cloud-computing-1:before { content: "\f13c"; }
+.helpper-icons-coding:before { content: "\f13d"; }
+.helpper-icons-cloud-computing:before { content: "\f13e"; }
+.helpper-icons-monitor:before { content: "\f13f"; }
+.helpper-icons-cloud:before { content: "\f140"; }
+.helpper-icons-user-1:before { content: "\f141"; }
+.helpper-icons-database-1:before { content: "\f142"; }
+.helpper-icons-users:before { content: "\f143"; }
+.helpper-icons-database:before { content: "\f144"; }
+.helpper-icons-user:before { content: "\f145"; }
+.helpper-icons-network:before { content: "\f146"; }
+.helpper-icons-responsive:before { content: "\f147"; }
+.helpper-icons-smartphone-4:before { content: "\f148"; }
+.helpper-icons-smartphone-3:before { content: "\f149"; }
+.helpper-icons-smartphone-2:before { content: "\f14a"; }
+.helpper-icons-smartphone-1:before { content: "\f14b"; }
+.helpper-icons-smartphone:before { content: "\f14c"; }
+.helpper-icons-cinema:before { content: "\f14d"; }
+.helpper-icons-magic-hat:before { content: "\f14e"; }
+.helpper-icons-layers-1:before { content: "\f14f"; }
+.helpper-icons-layers:before { content: "\f150"; }
+.helpper-icons-menu:before { content: "\f151"; }
+.helpper-icons-api:before { content: "\f152"; }
+.helpper-icons-play-button-1:before { content: "\f153"; }
+.helpper-icons-play-button:before { content: "\f154"; }
+.helpper-icons-video-player:before { content: "\f155"; }
+.helpper-icons-video-camera:before { content: "\f156"; }
+.helpper-icons-light-bulb-1:before { content: "\f157"; }
+.helpper-icons-idea-1:before { content: "\f158"; }
+.helpper-icons-idea:before { content: "\f159"; }
+.helpper-icons-rocket-ship:before { content: "\f15a"; }
+.helpper-icons-development:before { content: "\f15b"; }
+.helpper-icons-teamwork:before { content: "\f15c"; }
+.helpper-icons-light-bulb:before { content: "\f15d"; }
+.helpper-icons-cogwheel-outline:before { content: "\f15e"; }
+.helpper-icons-presentation:before { content: "\f15f"; }
+.helpper-icons-learning:before { content: "\f160"; }
+.helpper-icons-student:before { content: "\f161"; }
+.helpper-icons-reading:before { content: "\f162"; }
+.helpper-icons-develop:before { content: "\f163"; }
