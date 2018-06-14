@@ -38,29 +38,75 @@
 		methods: {
 			getData() {
 				this.isLoading = true;
-				axios.get(`http://localhost:1234?command=search&keyword=Istanbul`)
-				.then(response => {
-						this.weathers.push(response.data)
-						axios.get(`http://localhost:1234?command=search&keyword=Berlin`)
-						.then(response => {
-							this.weathers.push(response.data)
-							axios.get(`http://localhost:1234?command=search&keyword=Helsinki`)
-							.then(response => {
-								this.weathers.push(response.data)
-								axios.get(`http://localhost:1234?command=search&keyword=Dublin`)
-								.then(response => {	
-									this.weathers.push(response.data)
-									axios.get(`http://localhost:1234?command=search&keyword=Vancouver`)
-									.then(response => {
-										this.weathers.push(response.data)
-										this.isLoading = false
-									})
-								})
-							})
 
-						})
+				// request
+				axios.get(`http://localhost:1234?command=search&keyword=Vancouver`)
+				.then(response => {
+						axios.get(`http://localhost:1234?command=location&woeid=` + response.data[0].woeid)
+						.then(response => {
+								this.weathers.push(response.data)
+								
+								// request
+								axios.get(`http://localhost:1234?command=search&keyword=Berlin`)
+								.then(response => {
+										axios.get(`http://localhost:1234?command=location&woeid=` + response.data[0].woeid)
+										.then(response => {
+												this.weathers.push(response.data)
+
+												// request
+												axios.get(`http://localhost:1234?command=search&keyword=London`)
+												.then(response => {
+														axios.get(`http://localhost:1234?command=location&woeid=` + response.data[0].woeid)
+														.then(response => {
+																this.weathers.push(response.data)
+
+																// request
+																axios.get(`http://localhost:1234?command=search&keyword=Helsinki`)
+																.then(response => {
+																		axios.get(`http://localhost:1234?command=location&woeid=` + response.data[0].woeid)
+																		.then(response => {
+																				this.weathers.push(response.data)
+
+																				// request
+																				axios.get(`http://localhost:1234?command=search&keyword=Dublin`)
+																				.then(response => {
+																						axios.get(`http://localhost:1234?command=location&woeid=` + response.data[0].woeid)
+																						.then(response => {
+																								this.weathers.push(response.data)
+
+																								// request
+																								axios.get(`http://localhost:1234?command=search&keyword=Istanbul`)
+																								.then(response => {
+																										axios.get(`http://localhost:1234?command=location&woeid=` + response.data[0].woeid)
+																										.then(response => {
+																												this.weathers.push(response.data)
+																												this.isLoading = false
+																											}
+																										)
+																									}
+																								)
+																							}
+																						)
+																					}
+																				)
+																			}
+																		)
+																	}
+																)
+															}
+														)
+													}
+												)
+											}
+										)
+									}
+								)
+
+							}
+						)
 					}
 				)
+
 			}
 		},
 
