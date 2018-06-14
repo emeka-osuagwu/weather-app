@@ -57,7 +57,7 @@
 				}
 				else
 				{
-					this.$router.push('/search/' + this.search_keyword)
+					this.$router.go('/search/' + this.search_keyword)
 				}
 			}
 		}

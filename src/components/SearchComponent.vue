@@ -72,7 +72,6 @@
 						axios.get(`http://localhost:1234?command=location&woeid=` + response.data[0].woeid)
 						.then(response => {
 							this.weathers.push(response.data)
-							console.log(response.data.consolidated_weather[1].weather_state_abbr)
 						})
 					}
 				})
