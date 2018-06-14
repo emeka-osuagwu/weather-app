@@ -67,7 +67,7 @@
 		methods: {
 			getLocation(){
 				this.isLoading = true
-				axios.get(`http://localhost:1234?command=location&keyword=` + this.$route.params.woeid)
+				axios.get(`http://localhost:1234?command=location&woeid=` + this.$route.params.woeid)
 				.then(response => {
 					console.log(response)
 					this.isLoading = false

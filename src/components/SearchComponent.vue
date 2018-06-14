@@ -4,6 +4,15 @@
 		<section class="container-p">
 			<div class="container">	
 				<div class="row">
+
+					<div v-if="no_result" class="col-lg-9 col-md-9 center">
+						<div class="descriptions-container">
+							<div class="alert-container alert-blue">
+								No results were found. Try changing the keyword!
+							</div>
+						</div>
+					</div>
+
 					<div class="col-lg-9 col-md-9 center">
 						<div v-if="isLoading">
 							<Spinner></Spinner>
@@ -13,6 +22,7 @@
 						</div>
 						<weather v-if="!isLoading" :weathers="weathers" componentTitle="Search Results"></weather>
 					</div>
+
 				</div>
 				<div class="clear"></div>
 			</div>
@@ -51,14 +61,29 @@
 				this.isLoading = true
 				axios.get(`http://localhost:1234?command=search&keyword=` + this.$route.params.location)
 				.then(response => {
+
 					this.isLoading = false
-					this.weathers.push(response.data)
+					
+					if (response.data.length == 0) {
+						this.no_result = true
+					}
+					else
+					{
+						axios.get(`http://localhost:1234?command=location&woeid=` + response.data[0].woeid)
+						.then(response => {
+							this.weathers.push(response.data)
+							console.log(response.data.consolidated_weather[1].weather_state_abbr)
+						})
+					}
 				})
 			}
 		},
 
 		created() {
 			this.getLocation()
+		},
+
+		updated() {
 		}
 	}
 </script>
