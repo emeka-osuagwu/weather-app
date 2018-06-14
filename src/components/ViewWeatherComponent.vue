@@ -21,15 +21,32 @@
 						</div>
 					</div>
 
-					<div v-if="!isLoading" class="col-lg-9 col-md-9 center">
-						<div class="descriptions-container">
-							<h1>{{weather.title}}</h1>
-							<div class="single-detail">
-								<span>Posted On: Sep 09,2018</span>
-								<span>Updated On: Jan 21,2018</span>
+
+					<div v-if="!isLoading">
+						<div class="col-lg-9 col-md-9 center">
+							<div class="descriptions-container">
+								<h1>{{weather.title}}</h1>
+								<div class="single-detail">
+									<span>Date: {{convertDate}}</span>
+								</div>
 							</div>
-							<h2 id="intro" data-spy>Introductions</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+							<br>
+						</div>
+
+						<div class="col-lg-9 col-md-9 center">
+							<h1 class="single-heading">Consolidated Weathers</h1>
+						</div>
+
+						<div v-for="con in weather.consolidated_weather" class="col-lg-9 col-md-9 center">
+							<div class="descriptions-container">
+								<h2 id="intro" data-spy>State name</h2>
+								<p>{{con.weather_state_name}}</p>
+
+								<h2 id="intro" data-spy>Icon</h2>
+								<img  class="icon_holder" :src="getIcon(con.weather_state_abbr)">
+								<p>{{con.weather_state_name}}</p>
+							</div>
+							<br>
 						</div>
 					</div>
 				</div>
@@ -43,6 +60,7 @@
 <script>
 
 	import axios from "axios";
+	import moment from 'moment'
 	import Spinner from 'vue-simple-spinner';
 	import WeatherComponent from './Shared/WeatherComponent.vue';
 	import SubHeaderComponent from './Shared/SubHeaderComponent.vue';
@@ -58,9 +76,9 @@
 		
 		data () {
 			return {
-				no_result: false,
-				componentTitle: this.$route.params.woeid,
-				weather: {}
+				weather: '',
+				isLoading: false,
+				no_result: false
 			}
 		},
 
@@ -69,15 +87,24 @@
 				this.isLoading = true
 				axios.get(`http://localhost:1234?command=location&woeid=` + this.$route.params.woeid)
 				.then(response => {
-					console.log(response)
+					console.log(response.data)
 					this.isLoading = false
 					this.weather = response.data
 				})
+			},
+			getIcon(icon) {
+				return "https://www.metaweather.com/static/img/weather/" + icon + ".svg"
 			}
 		},
 
 		created() {
 			this.getLocation()
+		},
+
+		computed: {
+			convertDate: function(){
+				return moment(this.weather.time, "YYYY-MM-DD").format("ll")
+			}
 		}
 	}
 </script>
